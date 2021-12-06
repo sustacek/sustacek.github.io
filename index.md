@@ -1,3 +1,3 @@
-# BLA BLA
+# Josef Šustáček
 
-and text here
+Software development, woodworking, personal finance.
