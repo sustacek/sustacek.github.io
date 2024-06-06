@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2024-06-06T12:13:20+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Josef Šustáček</title><subtitle>Josef Šustáček -- Independent software developer with 15+ years of experience in the Java ecosystem. Ex-Liferay Global Services consultant, contributing to Liferay projects&apos; development  and operations. Amazon Web Services (AWS), CI/CD, code reviews, performance analysis  and tuning.</subtitle><entry><title type="html">Cloud Formation - Boolean as Parameter in template</title><link href="http://0.0.0.0:4000/2016/09/15/2016-09-cloud-formation-boolean-as-parameter-in.html" rel="alternate" type="text/html" title="Cloud Formation - Boolean as Parameter in template" /><published>2016-09-15T13:09:00+00:00</published><updated>2016-09-15T13:09:00+00:00</updated><id>http://0.0.0.0:4000/2016/09/15/2016-09-cloud-formation-boolean-as-parameter-in</id><content type="html" xml:base="http://0.0.0.0:4000/2016/09/15/2016-09-cloud-formation-boolean-as-parameter-in.html"><![CDATA[<p>You’ve most likely noticed, that Cloud Formation does not support any Boolean type for template Parameters (see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html?shortFooter=true">AWS docs</a>). You will get:<br /></p>
+<pre style="background-color: #f7f7f7; border: 1px solid rgb(208, 208, 208); color: #303030; font-size: 11pt; padding: 10px; width: auto !important;"><span style="font-size: 11pt;">Template format error: </span>Unrecognized parameter type: Boolean</pre>
+<p><br />
+But many of the resources have <span>Boolean</span> parameter, like <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html?shortFooter=true#cfn-rds-dbinstance-multiaz">AWS::RDS::DBInstance -&gt; MultiAZ</a> or its <i>StorageEncrypted</i> property.</p>
+
+<p>Solution? Use following workaround:<br /></p>
+<ul>
+<li>a "yes" / "no" selection <i>Parameter</i> with&nbsp;<span>String</span>&nbsp;type (or really any two values which make sense to your use case / language),&nbsp;</li>
+<li>a <i>Condition</i> (converting <span>String</span> to a semi-<span>Boolean</span>) and&nbsp;</li>
+<li>in the resource's property, use the intrinsic function <span>Fn:If</span>&nbsp;to convert semi-<span>Boolean</span>&nbsp;result of the condition into real <span>Boolean</span></li>
+</ul>
+<p><span style="font-family: inherit;">Note that you cannot use the <i>Condition</i> directly as the property’s value, using e.g. “Ref” + its name - you’d get a validation error, even if you defined “DependsOn”: </span><br /></p>
+<div>
+<pre style="background-color: #f7f7f7; border: 1px solid rgb(208, 208, 208); color: #303030; font-size: 11pt; padding: 10px; width: auto;"><span>Unresolved resource dependencies [DbRdsMultiAZCondition] in the Resources block of the template</span></pre>
+<div>
+<ul>
+</ul>
+See following Gist showing the relevant parts of the template to implement the solution:<br />
+<br />
+
+It's long and ugly, but it works :-)</div>
+</div>
+<p><br />
+<em>This was originally posted on blogger <a href="https://josef-sustacek-ee.blogspot.com/2016/09/cloud-formation-boolean-as-parameter-in.html">here</a></em>.</p>
+
+<hr />
+
+<h2 id="1-comments-captured-from-original-post-on-blogger">1 comments captured from <a href="https://josef-sustacek-ee.blogspot.com/2016/09/cloud-formation-boolean-as-parameter-in.html">original post</a> on Blogger</h2>
+
+<p><strong>pauldevine said on 2017-11-12</strong></p>
+
+<p>Thanks for this.</p>]]></content><author><name></name></author><category term="cloudformation" /><category term="aws" /><category term="legacy-blogger" /><summary type="html"><![CDATA[You’ve most likely noticed, that Cloud Formation does not support any Boolean type for template Parameters (see AWS docs). You will get: Template format error: Unrecognized parameter type: Boolean But many of the resources have Boolean parameter, like AWS::RDS::DBInstance -&gt; MultiAZ or its StorageEncrypted property.]]></summary></entry><entry><title type="html">Testing plugins with Ivy using Powermock</title><link href="http://0.0.0.0:4000/2013/03/22/2013-03-testing-plugins-with-ivy-using-powermock.html" rel="alternate" type="text/html" title="Testing plugins with Ivy using Powermock" /><published>2013-03-22T14:47:00+00:00</published><updated>2013-03-22T14:47:00+00:00</updated><id>http://0.0.0.0:4000/2013/03/22/2013-03-testing-plugins-with-ivy-using-powermock</id><content type="html" xml:base="http://0.0.0.0:4000/2013/03/22/2013-03-testing-plugins-with-ivy-using-powermock.html"><![CDATA[<p>Recently, <a href="https://github.com/liferay/liferay-plugins">liferay-plugins</a> SDK (and also its EE version) switched to using Ivy to manage some of the dependencies. Even when there are still static dependencies taken from defined portal – Ivy dependencies are added to the <span style="font-family: Courier New, Courier, monospace;">lib/ext</span> and <span style="font-family: Courier New, Courier, monospace;">ROOT/WEB-INF/lib</span> ones, see <a href="https://github.com/liferay/liferay-plugins/blob/master/build-common.xml#L25">build-common.xml</a> – this makes adding dependencies into plugins so much easier and cleaner.</p>
+
+<p>Since I’m working on some plugins, I wanted to cover the functionality properly using JUnit tests, using  <a href="https://code.google.com/p/powermock/">Powermock</a> and <a href="https://code.google.com/p/mockito/">Mockito</a>. Here are necessary steps to get those libraries on test classpath in plugins SDK:<br />
+<br />
+(1) open <span style="font-family: Courier New, Courier, monospace;">./ivy.xml</span><br />
+(2) add following dependencies:<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><span style="font-family: Courier New, Courier, monospace;">…</span><br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><span style="font-family: 'Courier New', Courier, monospace;">&lt;dependency conf=”runtime” name=”xml-apis” org=”xml-apis” rev=”1.4.01” /&gt;</span><br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><span style="font-family: Courier New, Courier, monospace;">&lt;dependency conf=”test” name=”junit” org=”junit” rev=”4.11” /&gt;</span><br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><span style="font-family: Courier New, Courier, monospace;">&lt;!– CUSTOM BEGIN –&gt;</span><br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><span style="font-family: 'Courier New', Courier, monospace;">&lt;dependency conf=”test” name=”mockito-all” org=”org.mockito” rev=”1.9.5” /&gt;</span><br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><span style="font-family: Courier New, Courier, monospace;">&lt;dependency conf=”test” name=”powermock-api-mockito” org=”org.powermock” rev=”1.5” /&gt;</span><br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><span style="font-family: Courier New, Courier, monospace;">&lt;dependency conf=”test” name=”powermock-api-support” org=”org.powermock” rev=”1.5” /&gt;</span><br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><span style="font-family: Courier New, Courier, monospace;">&lt;dependency conf=”test” name=”powermock-core” org=”org.powermock” rev=”1.5” /&gt;</span><br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><span style="font-family: Courier New, Courier, monospace;">&lt;dependency conf=”test” name=”powermock-reflect” org=”org.powermock” rev=”1.5” /&gt;</span><br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><span style="font-family: Courier New, Courier, monospace;">&lt;dependency conf=”test” name=”powermock-module-junit4” org=”org.powermock” rev=”1.5” /&gt;</span><br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><span style="font-family: Courier New, Courier, monospace;">&lt;dependency conf=”test” name=”powermock-module-junit4-common” org=”org.powermock” rev=”1.5” /&gt;</span><br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><span style="font-family: Courier New, Courier, monospace;">&lt;dependency conf=”test” name=”javassist” org=”javassist” rev=”3.12.1.GA”/&gt;</span><br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><span style="font-family: Courier New, Courier, monospace;">&lt;!– CUSTOM END –&gt;</span><br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span><span style="font-family: Courier New, Courier, monospace;">…</span><span class="Apple-tab-span" style="white-space: pre;"> </span><br />
+<br />
+I’m sure there may be more combinations of dependencies, this is the first that fully worked for my basic tests using classes and calls like <span style="font-family: Courier New, Courier, monospace;">@PrepareForTest</span>, <span style="font-family: Courier New, Courier, monospace;">@RunWith(PowerMockRunner.class)</span>, <span style="font-family: Courier New, Courier, monospace;">PowerMockito.mock(…)</span> and <span style="font-family: Courier New, Courier, monospace;">Mockito.*</span>.</p>
+
+<p><em>This was originally posted on blogger <a href="https://josef-sustacek-ee.blogspot.com/2013/03/testing-plugins-with-ivy-using-powermock.html">here</a></em>.</p>]]></content><author><name></name></author><category term="test" /><category term="plugins" /><category term="mock" /><category term="liferay" /><category term="junit" /><category term="legacy-blogger" /><summary type="html"><![CDATA[Recently, liferay-plugins SDK (and also its EE version) switched to using Ivy to manage some of the dependencies. Even when there are still static dependencies taken from defined portal – Ivy dependencies are added to the lib/ext and ROOT/WEB-INF/lib ones, see build-common.xml – this makes adding dependencies into plugins so much easier and cleaner.]]></summary></entry><entry><title type="html">Want lambdas with jdk6? Here’s an IDEA</title><link href="http://0.0.0.0:4000/2013/02/14/2013-02-want-lambdas-with-jdk6-heres-idea.html" rel="alternate" type="text/html" title="Want lambdas with jdk6? Here’s an IDEA" /><published>2013-02-14T18:30:00+00:00</published><updated>2013-02-14T18:30:00+00:00</updated><id>http://0.0.0.0:4000/2013/02/14/2013-02-want-lambdas-with-jdk6-heres-idea</id><content type="html" xml:base="http://0.0.0.0:4000/2013/02/14/2013-02-want-lambdas-with-jdk6-heres-idea.html"><![CDATA[<p>All Java people are looking forward to jdk8 to bring more functional-like syntax to the language, but it will take some time before we’ll really be able to code like that day to day. It may take years, before jdk8 gets fully adopted as a standard (how many of you already use jdk7 in production these days?) Till then, we’ll still have to write all the verbose code around – if you want to stick with Java language, of course.<br /></p>
+
+<p>Want to try how it will look like in your code today? Get <a href="http://www.jetbrains.com/idea/">IntelliJ IDEA 12</a>. This is how my source code looks in it (Java <i>1.6.0_38-b05</i>):<br />
+<br /></p>
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpks437MZ-4RadMWTAxmyL_xdmCWXWhuzan7vVXglIJHhDpRsA3Ve_ndnKrduH4s8oZ98BWmZ08Ia9Nv6377-quCkiI7jOAo35G_qjvUyepxuQooJ1B2wYpN_EHTs4SbPIQG3thJn9zfbm/s1600/lambdas+in+JDK6.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="122" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpks437MZ-4RadMWTAxmyL_xdmCWXWhuzan7vVXglIJHhDpRsA3Ve_ndnKrduH4s8oZ98BWmZ08Ia9Nv6377-quCkiI7jOAo35G_qjvUyepxuQooJ1B2wYpN_EHTs4SbPIQG3thJn9zfbm/s640/lambdas+in+JDK6.png" width="640" /></a></div>
+<p><br />
+When I hover the grayed code, real syntax comes up:<br />
+<br /></p>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhC9OfRbrX86-32fgxqUp4AZw5_81P7lXYFVMOi15h43v55hFFfVUpxY-7glUSsCitFfgUChnATH5ol10auLSX2a4ytIuR78ipvHngr1Ja_9JmvfVZWd3taERR861SWCxQTsLFuQ9CrY9H-/s1600/lambdas+in+JDK6+-+hover.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="112" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhC9OfRbrX86-32fgxqUp4AZw5_81P7lXYFVMOi15h43v55hFFfVUpxY-7glUSsCitFfgUChnATH5ol10auLSX2a4ytIuR78ipvHngr1Ja_9JmvfVZWd3taERR861SWCxQTsLFuQ9CrY9H-/s640/lambdas+in+JDK6+-+hover.png" width="640" /></a></div>
+<p><br />
+Pretty cool, huh?<br />
+<br />
+Extremely improves readability, when your anonymous class method’s body is just one line return statement. And that’s pretty often, when you’re e.g. mocking method calls in unit tests.</p>
+
+<p><em>This was originally posted on blogger <a href="https://josef-sustacek-ee.blogspot.com/2013/02/want-lambdas-with-jdk6-heres-idea.html">here</a></em>.</p>]]></content><author><name></name></author><category term="idea" /><category term="development" /><category term="java" /><category term="lambda" /><category term="legacy-blogger" /><summary type="html"><![CDATA[All Java people are looking forward to jdk8 to bring more functional-like syntax to the language, but it will take some time before we’ll really be able to code like that day to day. It may take years, before jdk8 gets fully adopted as a standard (how many of you already use jdk7 in production these days?) Till then, we’ll still have to write all the verbose code around – if you want to stick with Java language, of course.]]></summary></entry><entry><title type="html">SmartGit/Hg 4 and Docky in Ubuntu 12.10</title><link href="http://0.0.0.0:4000/2013/02/12/2013-02-smartgithg-4-and-docky-in-ubuntu-1210.html" rel="alternate" type="text/html" title="SmartGit/Hg 4 and Docky in Ubuntu 12.10" /><published>2013-02-12T20:37:00+00:00</published><updated>2013-02-12T20:37:00+00:00</updated><id>http://0.0.0.0:4000/2013/02/12/2013-02-smartgithg-4-and-docky-in-ubuntu-1210</id><content type="html" xml:base="http://0.0.0.0:4000/2013/02/12/2013-02-smartgithg-4-and-docky-in-ubuntu-1210.html"><![CDATA[<p>Since the first time I started to use Ubuntu as a primary operating system on my work laptop, I liked the possibility of endless customization possibilities I could make in the OS to have the UI match my preferences. Although I trust UX engineers from Canonical to do the work for me in most cases, sometimes you like to use few things differently or simply try new cool widget in your day to day work.</p>
+
+<p>One major customization that I’ve started to use is <i>dock</i> at the bottom or the screen. It keeps my most-used applications and aggregates their windows (when they are running). This functionality is of course inspired by great dock present in OS X systems.<br />
+<br />
+I’ve used <a href="https://launchpad.net/awn/">AWN</a> in previous versions of Ubuntu, quite happily except few quirks, but in my newest 12.10 release, I’ve switched to <a href="http://www.go-docky.com/">Docky</a>. I came across it on some Internet forum where I was looking for solutions to my issues with AWN in freshly installed system.<br />
+<br /></p>
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<tr><td><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiegX0yPeDg-oBZB8l2Egnr0KceG4utjrB0VcpDkFT82SZ-azxJlRNp5ylQ_pGZrqys93uqkkYDlXmf78M8anE_qFDI_epmEM-I8OksW6obwdHCZCdjLV0Nrg3STAA72LMV975gQM7Z3xjF/s1600/docky.png" style="margin-left: auto; margin-right: auto;"><img border="0" height="60" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiegX0yPeDg-oBZB8l2Egnr0KceG4utjrB0VcpDkFT82SZ-azxJlRNp5ylQ_pGZrqys93uqkkYDlXmf78M8anE_qFDI_epmEM-I8OksW6obwdHCZCdjLV0Nrg3STAA72LMV975gQM7Z3xjF/s320/docky.png" width="320" /></a></td></tr>
+<tr><td class="tr-caption" style="font-size: 13px;">Docky bar at the bottom of the screen</td></tr>
+</tbody></table>
+<p><br />
+<a name="more"></a>Docky seems much simpler, robust and reliable so far. Everything works pretty much out of the box, my dock contains 5 static launchers right now (Skype, Google Chrome, Firefox, Last.fm, IntelliJ IDEA and SmartGit/Hg) and then some utilities offered by Docky.<br />
+<br />
+Regular applications, where binary executable file is used to launch and run the program, are usually working without any issues in Docky, However, some special applications, script- or Java-based, may have problems with dock. In my case, this happened with newest <a href="http://www.syntevo.com/smartgithg/index.html">SmartGit/Hg 4</a>. While I was able to pin it into launcher (SmartGit/Hg’s distribution for Linux contains shell script to generate the *.desktop launcher file), I had problem with duplicate icon in the dock, once program was launched. Docky did not recognize the application’s windows and thus was considering it to be a separate application then the pinned icon.<br />
+<br />
+Problem is the way in which Docky is able to match the launchers (pinned icons) to actual application’s windows. Docky’s options are sometimes limited, in case of SmartGit/Hg 4, the Ubuntu launcher runs a shell script <span style="font-family: Courier New, Courier, monospace;">…smartgithg-4_0_1/bin/smartgithg.sh</span>, which then starts a JVM which as an OS process looks like <span style="font-family: Courier New, Courier, monospace;">java -D … -jar …bootloader.jar</span>. Moreover, the title of the window is not static, SmartGit/Hg places the name of project into it. So Docky has obviously problem to match new OS process to the icon in dock.<br />
+<br />
+After a while, I was able to get the solution: use <i>StartupWMClass</i> hint in the launcher file, to help Docky identify the application’s window. I found the hint in <a href="https://bugs.launchpad.net/docky/+bug/484610">Docky’s bugtracker pages</a>. Necessary steps:<br />
+<br /></p>
+<ol>
+<li>find out the value for&nbsp;<i>StartupWMClass</i>:</li>
+<ol>
+<li>start SmartGit/Hg 4,</li>
+<li>start terminal, run <span style="font-family: Courier New, Courier, monospace;">xprops,</span></li>
+<li>with cursor (changed to cross by <span style="font-family: Courier New, Courier, monospace;">xprops</span> command) click on title of the SmartGit/Hg main window,</li>
+<li>look into terminal, xprops finished, dumping a lot of information. The one we're looking for is at the bottom:</li>
+<ul>
+<li></li>
+<li><span style="font-family: Courier New, Courier, monospace;">...</span></li>
+<li><span style="font-family: Courier New, Courier, monospace;">ET_WM_SYNC_REQUEST</span></li>
+<li><b><span style="font-family: Courier New, Courier, monospace;">WM_CLASS(STRING) = "SmartGit/Hg", "SmartGit/Hg"</span></b></li>
+<li><span style="font-family: Courier New, Courier, monospace;">WM_ICON_NAME(STRING) = "Liferay - SmartGit/Hg 4.0.1 "</span></li>
+<li><span style="font-family: 'Courier New', Courier, monospace;">...</span></li>
+</ul>
+</ol>
+<li><span style="font-family: inherit;">open </span><span style="font-family: Courier New, Courier, monospace;">~/.local/share/applications/syntevo-smartgithg.desktop</span> -- the default launcher file for SmartGit/Hg 4,</li>
+<li>add following line to the file:</li>
+<ol>
+<li><span style="font-family: Courier New, Courier, monospace;">StartupWMClass=SmartGit/Hg</span></li>
+</ol>
+</ol>
+<p><br />
+Then Docky will be able to match your SmartGit/Hg windows to pinned icon and you won’t see double icon in dock any more.<br />
+<br />
+While looking at <span style="font-family: Courier New, Courier, monospace;">jetbrains-idea.desktop</span> launcher file for IntelliJ IDEA, I’ve noticed it uses the same approach and I’ve never had a problem with it in Docky, so I assume this approach may be reliable in a longer run.<br />
+<br />
+Btw. <a href="http://www.ubuntugeek.com/menulibre-menu-editor-for-gnome-and-unity.html">MenuLibre</a> has been very useful to manage all the launchers in Ubuntu. With Unity, the old-fashioned application’s categories are not present in the UI any more. If allows you to change the *.desktop files manually in built-in editor or use GUI to form the file content’s for you (selecting the executable file and icon using pop-up dialog etc.)</p>
+
+<p><em>This was originally posted on blogger <a href="https://josef-sustacek-ee.blogspot.com/2013/02/smartgithg-4-and-docky-in-ubuntu-1210.html">here</a></em>.</p>]]></content><author><name></name></author><category term="ubuntu" /><category term="linux" /><category term="docky" /><category term="smartgithg" /><category term="java" /><category term="legacy-blogger" /><summary type="html"><![CDATA[Since the first time I started to use Ubuntu as a primary operating system on my work laptop, I liked the possibility of endless customization possibilities I could make in the OS to have the UI match my preferences. Although I trust UX engineers from Canonical to do the work for me in most cases, sometimes you like to use few things differently or simply try new cool widget in your day to day work.]]></summary></entry><entry><title type="html">Creating unit tests in core Liferay sources</title><link href="http://0.0.0.0:4000/2013/02/05/2013-02-creating-unit-tests-in-core-liferay.html" rel="alternate" type="text/html" title="Creating unit tests in core Liferay sources" /><published>2013-02-05T22:49:00+00:00</published><updated>2013-02-05T22:49:00+00:00</updated><id>http://0.0.0.0:4000/2013/02/05/2013-02-creating-unit-tests-in-core-liferay</id><content type="html" xml:base="http://0.0.0.0:4000/2013/02/05/2013-02-creating-unit-tests-in-core-liferay.html"><![CDATA[<p>Liferay has been catching up lately on the tests coverage. Many improvements have been made in the trunk located in <a href="https://github.com/liferay/liferay-portal">liferay-portal / master branch on GitHub</a> and since I’ve been fixing some things recently, I’ve included unit test for the changed class as well.</p>
+
+<p>Quick start how-to:<br /></p>
+<ol>
+<li>read&nbsp;<a href="http://www.liferay.com/community/wiki/-/wiki/Main/Liferay+Testing+Infrastructure">Liferay testing documentation</a>&nbsp;to get the basic picture,</li>
+<li>create your unit test in <span style="font-family: Courier New, Courier, monospace;">portal-impl/test/unit/.../&lt;your_class&gt;Test.java</span><span style="font-family: Arial, Helvetica, sans-serif;">,</span></li>
+<li>create test methods as usual with JUnit 4.x,</li>
+<li>run the test and see results:</li>
+</ol>
+<ul><ul>
+<li><span style="font-family: Courier New, Courier, monospace;">cd portal-impl</span><span style="font-family: Arial, Helvetica, sans-serif;">,</span></li>
+<li><span style="font-family: Courier New, Courier, monospace;">ant test-class -Dclass=CustomJspRegistryImplTest</span><span style="font-family: Arial, Helvetica, sans-serif;">,</span></li>
+<li>note that only the name of the class is used, not the full name including package.</li>
+</ul>
+</ul>
+<p>Testing just a single class at a time seems to be necessary, executing <span style="font-family: Courier New, Courier, monospace;">ant test-unit</span> to run all existing unit tests seems to be time consuming (from minutes to tens of minutes).<br /></p>
+<div>
+<br />
+<ul>
+</ul>
+<div>
+<a name="more"></a></div>
+<div>
+For simple tests and classes, you'll be just fine with just instantiating your tested class, calling the method and verifying the returned result:</div>
+<div>
+<br /></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;">public class CustomJspRegistryImplTest {</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><br /></span></div>
+<div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;">  </span>@Test</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;">  </span>public void testGetCustomJspFileName_noExtension() {</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><br /></span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;">    </span>Assert.assertEquals(</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;">   &nbsp;</span></span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">  </span><span style="font-family: 'Courier New', Courier, monospace;">"/some/absolute/non_extension_page.test-context",</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;">    </span>_customJspRegistry.getCustomJspFileName(</span></div>
+<div>
+<span style="font-family: 'Courier New', Courier, monospace; white-space: pre;"> &nbsp;</span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;"> &nbsp;</span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">  </span><span style="font-family: 'Courier New', Courier, monospace;">"test-context", "/some/absolute/non_extension_page"));</span><br />
+<span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">  </span><span style="font-family: 'Courier New', Courier, monospace;">}</span></div>
+</div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><br /></span></div>
+<div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;">&nbsp;</span></span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;"> </span><span style="font-family: 'Courier New', Courier, monospace;">private CustomJspRegistryImpl _customJspRegistry =</span></div>
+<div>
+<span style="font-family: 'Courier New', Courier, monospace; white-space: pre;"> &nbsp;</span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">  </span><span style="font-family: 'Courier New', Courier, monospace;">new CustomJspRegistryImpl();</span></div>
+</div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><br /></span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;">}</span></div>
+<div>
+<br /></div>
+<div>
+But what if code inside&nbsp;<span style="font-family: Courier New, Courier, monospace;">getCustomJspFileName()</span> calls some other methods, how to ensure we're not testing their implementation instead of ours? The answer is a technique extensively used in software development:&nbsp;<i>mocking</i>.&nbsp;</div>
+<div>
+<br /></div>
+<div>
+<a href="http://www.liferay.com/community/wiki/-/wiki/Main/Liferay+Testing+Infrastructure#section-Liferay+Testing+Infrastructure-Unit+test+with+external+dependencies">Wiki link above</a> contains some basic examples of static methods' mocking. When you need to mock some instance method's call, you can use either:</div>
+<div>
+<ol>
+<li>already, fully mocked classes from libraries like&nbsp;<span style="font-family: Courier New, Courier, monospace;">spring-test</span>, available in Liferay out of the box. Examples could be <span style="font-family: Courier New, Courier, monospace;">MockServletContext</span> or&nbsp;<span style="font-family: Courier New, Courier, monospace;">MockHttpServletRequest</span>, allowing you to tailor the objects as you need.</li>
+<li>use PowerMock and Mockito libraries to mock individual calls on any class objects:</li>
+</ol>
+<div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span style="white-space: pre;">&nbsp; </span>private HttpServletRequest _getRequestWithApplicatoinAdapter(</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;">&nbsp;</span></span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">&nbsp;</span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">  </span><span style="font-family: 'Courier New', Courier, monospace;">String adapterServletContextName) {</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><br /></span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;">&nbsp;</span></span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">   </span><span style="font-family: 'Courier New', Courier, monospace;">MockHttpServletRequest request = new MockHttpServletRequest();</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><br /></span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;">&nbsp;</span></span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">   </span><span style="font-family: 'Courier New', Courier, monospace;">ThemeDisplay spyThemeDisplay = spy(new ThemeDisplay());</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><br /></span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;">    </span>request.setAttribute(WebKeys.THEME_DISPLAY, spyThemeDisplay);</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><br /></span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;"> &nbsp;</span></span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">  </span><span style="font-family: 'Courier New', Courier, monospace;">Group spyScopeGroup = spy(new GroupImpl());</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><br /></span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;"> &nbsp;</span></span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">  </span><span style="font-family: 'Courier New', Courier, monospace;">UnicodeProperties spyProps = spy(new UnicodeProperties());</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><br /></span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;"> &nbsp;</span></span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">  </span><span style="font-family: 'Courier New', Courier, monospace;">doReturn(spyScopeGroup).when(spyThemeDisplay).getScopeGroup();</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;"> &nbsp;</span></span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">  </span><span style="font-family: 'Courier New', Courier, monospace;">doReturn(spyProps).when(spyScopeGroup).getTypeSettingsProperties();</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;"> &nbsp;</span></span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">  </span><span style="font-family: 'Courier New', Courier, monospace;">doReturn(adapterServletContextName).when(spyProps).getProperty(</span><br />
+<span style="font-family: 'Courier New', Courier, monospace; white-space: pre;"> &nbsp;</span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;"> &nbsp;</span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">  </span><span style="font-family: 'Courier New', Courier, monospace;">"customJspServletContextName");</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><br /></span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span class="Apple-tab-span" style="white-space: pre;"> &nbsp;</span></span><span style="font-family: 'Courier New', Courier, monospace; white-space: pre;">  </span><span style="font-family: 'Courier New', Courier, monospace;">return request;</span></div>
+<div>
+<span style="font-family: Courier New, Courier, monospace;"><span style="white-space: pre;">&nbsp; </span>}</span></div>
+</div>
+</div>
+<div>
+<br /></div>
+<div>
+As you can see, we need to provide particular <span style="font-family: Courier New, Courier, monospace;">typeSetting</span> in scope group of given HTTP request. Every time we want to mock an object's method call, we need to do two things:</div>
+<div>
+<ol>
+<li>get instrumented version of the object:</li>
+<ul>
+<li><span style="font-family: 'Courier New', Courier, monospace;">ThemeDisplay spyThemeDisplay = spy(new ThemeDisplay());</span></li>
+</ul>
+<li>say which methods we want to mock and how:</li>
+<ul>
+<li><span style="font-family: 'Courier New', Courier, monospace;">doReturn(spyScopeGroup).when(spyThemeDisplay).getScopeGroup();</span></li>
+<li><span style="font-family: Arial, Helvetica, sans-serif;">this line could be read as:&nbsp;</span></li>
+<ul>
+<li><span style="font-family: Arial, Helvetica, sans-serif;">whenever method&nbsp;</span><span style="font-family: 'Courier New', Courier, monospace;">getScopeGroup()</span><span style="font-family: Arial, Helvetica, sans-serif;">&nbsp;is being called on our instrumented object (</span><span style="font-family: 'Courier New', Courier, monospace;">spyThemeDisplay)</span><span style="font-family: Arial, Helvetica, sans-serif;">,&nbsp;&nbsp;we'll get object&nbsp;</span><span style="font-family: 'Courier New', Courier, monospace;">spyScopeGroup</span></li>
+<li><span style="font-family: Arial, Helvetica, sans-serif;">returned object&nbsp;<span style="font-family: 'Courier New', Courier, monospace;">spyScopeGroup</span>&nbsp;could be (and in our example is) further mocked as well.</span></li>
+</ul>
+</ul>
+</ol>
+<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://code.google.com/p/powermock/wiki/MockitoUsage13">Powermock documentation</a> contains a ton of useful examples and provides a very god entry point.&nbsp;</span><span style="font-family: Arial, Helvetica, sans-serif;">Complete source of the test class I've used in this post could be found on&nbsp;</span><a href="https://github.com/sustacek/liferay-portal/blob/LPS-30219/portal-impl/test/unit/com/liferay/portal/util/CustomJspRegistryImplTest.java" style="font-family: Arial, Helvetica, sans-serif;">Github</a><span style="font-family: Arial, Helvetica, sans-serif;">.&nbsp;</span></div>
+</div>
+
+<p><br />
+<em>This was originally posted on blogger <a href="https://josef-sustacek-ee.blogspot.com/2013/02/creating-unit-tests-in-core-liferay.html">here</a></em>.</p>]]></content><author><name></name></author><category term="test" /><category term="development" /><category term="mock" /><category term="liferay" /><category term="java" /><category term="junit" /><category term="legacy-blogger" /><summary type="html"><![CDATA[Liferay has been catching up lately on the tests coverage. Many improvements have been made in the trunk located in liferay-portal / master branch on GitHub and since I’ve been fixing some things recently, I’ve included unit test for the changed class as well.]]></summary></entry><entry><title type="html">OpenDS – testing LDAP server</title><link href="http://0.0.0.0:4000/2013/01/10/2013-01-opends-testing-ldap-server.html" rel="alternate" type="text/html" title="OpenDS – testing LDAP server" /><published>2013-01-10T20:13:00+00:00</published><updated>2013-01-10T20:13:00+00:00</updated><id>http://0.0.0.0:4000/2013/01/10/2013-01-opends-testing-ldap-server</id><content type="html" xml:base="http://0.0.0.0:4000/2013/01/10/2013-01-opends-testing-ldap-server.html"><![CDATA[<p>Since LDAP integration is part of most modern servers and Liferay also supports this directory service protocol, development on local machine gives us the challenge of testing the integration, without installing (or using remote) full-blown LDAP server. Since I’ve been implementing some LDAP classes changes recently and had to test them manually, I was looking around what could I use easily use for this purpose.</p>
+
+<p>I was on Windows that time, but using Ubuntu simultaneously when possible, so the tool would ideally be available on both operating systems. Among other requirements, I wanted the obvious:</p>
+
+<ol>
+  <li>easy and quick installation,</li>
+  <li>quick startup with small footprint on computer’s performance,</li>
+  <li>sample data (users) generation,</li>
+  <li>free of at low cost.</li>
+</ol>
+
+<p>After some googling, I came across <a href="https://www.oracle.com/technical-resources/articles/opends.html" title="OpenDS">OpenDS</a>, which seemed to fullfil all my requirements. It’s written in  Java, does not require OS installation (just unzipping) and initial server setup is quick and easy.</p>
+
+<p>Zipped package contains setup and setup.bat, launching GUI setup tool. You can create default LDAP structure (with sample data, if you wish) and within 2 minutes, you have LDAP server up and running, ready to be accessed by your LDAP clients. OpenDS contains also simple GUI browser, allowing inline modifications to entries.</p>
+
+<p>I can only recommend.</p>
+
+<p><em>This was originally posted on blogger <a href="https://josef-sustacek-ee.blogspot.com/2013/01/opends-testing-ldap-server.html">here</a></em>.</p>]]></content><author><name></name></author><category term="ldap" /><category term="development" /><category term="java" /><category term="legacy-blogger" /><summary type="html"><![CDATA[Since LDAP integration is part of most modern servers and Liferay also supports this directory service protocol, development on local machine gives us the challenge of testing the integration, without installing (or using remote) full-blown LDAP server. Since I’ve been implementing some LDAP classes changes recently and had to test them manually, I was looking around what could I use easily use for this purpose.]]></summary></entry></feed>

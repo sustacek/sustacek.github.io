@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SmartGit/Hg 4 and Docky in Ubuntu 12.10 | Josef Šustáček</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="SmartGit/Hg 4 and Docky in Ubuntu 12.10" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Josef Šustáček – Independent software developer with 15+ years of experience in the Java ecosystem. Ex-Liferay Global Services consultant, contributing to Liferay projects’ development and operations. Amazon Web Services (AWS), CI/CD, code reviews, performance analysis and tuning." />
+<meta property="og:description" content="Josef Šustáček – Independent software developer with 15+ years of experience in the Java ecosystem. Ex-Liferay Global Services consultant, contributing to Liferay projects’ development and operations. Amazon Web Services (AWS), CI/CD, code reviews, performance analysis and tuning." />
+<link rel="canonical" href="http://0.0.0.0:4000/2013/02/12/2013-02-smartgithg-4-and-docky-in-ubuntu-1210.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/2013/02/12/2013-02-smartgithg-4-and-docky-in-ubuntu-1210.html" />
+<meta property="og:site_name" content="Josef Šustáček" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-02-12T20:37:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SmartGit/Hg 4 and Docky in Ubuntu 12.10" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2013-02-12T20:37:00+00:00","datePublished":"2013-02-12T20:37:00+00:00","description":"Josef Šustáček – Independent software developer with 15+ years of experience in the Java ecosystem. Ex-Liferay Global Services consultant, contributing to Liferay projects’ development and operations. Amazon Web Services (AWS), CI/CD, code reviews, performance analysis and tuning.","headline":"SmartGit/Hg 4 and Docky in Ubuntu 12.10","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/2013/02/12/2013-02-smartgithg-4-and-docky-in-ubuntu-1210.html"},"url":"http://0.0.0.0:4000/2013/02/12/2013-02-smartgithg-4-and-docky-in-ubuntu-1210.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Josef Šustáček" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Josef Šustáček</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/about">About</a><a class="page-link" href="/blog">Blog</a><a class="page-link" href="/personal-finance">Personal Finance</a><a class="page-link" href="/woodworking">Woodworking</a><a class="page-link" href="/contact">Contact</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">SmartGit/Hg 4 and Docky in Ubuntu 12.10</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2013-02-12T20:37:00+00:00" itemprop="datePublished">Feb 12, 2013
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Since the first time I started to use Ubuntu as a primary operating system on my work laptop, I liked the possibility of endless customization possibilities I could make in the OS to have the UI match my preferences. Although I trust UX engineers from Canonical to do the work for me in most cases, sometimes you like to use few things differently or simply try new cool widget in your day to day work.</p>
+
+<p>One major customization that I’ve started to use is <i>dock</i> at the bottom or the screen. It keeps my most-used applications and aggregates their windows (when they are running). This functionality is of course inspired by great dock present in OS X systems.<br />
+<br />
+I’ve used <a href="https://launchpad.net/awn/">AWN</a> in previous versions of Ubuntu, quite happily except few quirks, but in my newest 12.10 release, I’ve switched to <a href="http://www.go-docky.com/">Docky</a>. I came across it on some Internet forum where I was looking for solutions to my issues with AWN in freshly installed system.<br />
+<br /></p>
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<tr><td><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiegX0yPeDg-oBZB8l2Egnr0KceG4utjrB0VcpDkFT82SZ-azxJlRNp5ylQ_pGZrqys93uqkkYDlXmf78M8anE_qFDI_epmEM-I8OksW6obwdHCZCdjLV0Nrg3STAA72LMV975gQM7Z3xjF/s1600/docky.png" style="margin-left: auto; margin-right: auto;"><img border="0" height="60" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiegX0yPeDg-oBZB8l2Egnr0KceG4utjrB0VcpDkFT82SZ-azxJlRNp5ylQ_pGZrqys93uqkkYDlXmf78M8anE_qFDI_epmEM-I8OksW6obwdHCZCdjLV0Nrg3STAA72LMV975gQM7Z3xjF/s320/docky.png" width="320" /></a></td></tr>
+<tr><td class="tr-caption" style="font-size: 13px;">Docky bar at the bottom of the screen</td></tr>
+</tbody></table>
+<p><br />
+<a name="more"></a>Docky seems much simpler, robust and reliable so far. Everything works pretty much out of the box, my dock contains 5 static launchers right now (Skype, Google Chrome, Firefox, Last.fm, IntelliJ IDEA and SmartGit/Hg) and then some utilities offered by Docky.<br />
+<br />
+Regular applications, where binary executable file is used to launch and run the program, are usually working without any issues in Docky, However, some special applications, script- or Java-based, may have problems with dock. In my case, this happened with newest <a href="http://www.syntevo.com/smartgithg/index.html">SmartGit/Hg 4</a>. While I was able to pin it into launcher (SmartGit/Hg’s distribution for Linux contains shell script to generate the *.desktop launcher file), I had problem with duplicate icon in the dock, once program was launched. Docky did not recognize the application’s windows and thus was considering it to be a separate application then the pinned icon.<br />
+<br />
+Problem is the way in which Docky is able to match the launchers (pinned icons) to actual application’s windows. Docky’s options are sometimes limited, in case of SmartGit/Hg 4, the Ubuntu launcher runs a shell script <span style="font-family: Courier New, Courier, monospace;">…smartgithg-4_0_1/bin/smartgithg.sh</span>, which then starts a JVM which as an OS process looks like <span style="font-family: Courier New, Courier, monospace;">java -D … -jar …bootloader.jar</span>. Moreover, the title of the window is not static, SmartGit/Hg places the name of project into it. So Docky has obviously problem to match new OS process to the icon in dock.<br />
+<br />
+After a while, I was able to get the solution: use <i>StartupWMClass</i> hint in the launcher file, to help Docky identify the application’s window. I found the hint in <a href="https://bugs.launchpad.net/docky/+bug/484610">Docky’s bugtracker pages</a>. Necessary steps:<br />
+<br /></p>
+<ol>
+<li>find out the value for&nbsp;<i>StartupWMClass</i>:</li>
+<ol>
+<li>start SmartGit/Hg 4,</li>
+<li>start terminal, run <span style="font-family: Courier New, Courier, monospace;">xprops,</span></li>
+<li>with cursor (changed to cross by <span style="font-family: Courier New, Courier, monospace;">xprops</span> command) click on title of the SmartGit/Hg main window,</li>
+<li>look into terminal, xprops finished, dumping a lot of information. The one we're looking for is at the bottom:</li>
+<ul>
+<li></li>
+<li><span style="font-family: Courier New, Courier, monospace;">...</span></li>
+<li><span style="font-family: Courier New, Courier, monospace;">ET_WM_SYNC_REQUEST</span></li>
+<li><b><span style="font-family: Courier New, Courier, monospace;">WM_CLASS(STRING) = "SmartGit/Hg", "SmartGit/Hg"</span></b></li>
+<li><span style="font-family: Courier New, Courier, monospace;">WM_ICON_NAME(STRING) = "Liferay - SmartGit/Hg 4.0.1 "</span></li>
+<li><span style="font-family: 'Courier New', Courier, monospace;">...</span></li>
+</ul>
+</ol>
+<li><span style="font-family: inherit;">open </span><span style="font-family: Courier New, Courier, monospace;">~/.local/share/applications/syntevo-smartgithg.desktop</span> -- the default launcher file for SmartGit/Hg 4,</li>
+<li>add following line to the file:</li>
+<ol>
+<li><span style="font-family: Courier New, Courier, monospace;">StartupWMClass=SmartGit/Hg</span></li>
+</ol>
+</ol>
+<p><br />
+Then Docky will be able to match your SmartGit/Hg windows to pinned icon and you won’t see double icon in dock any more.<br />
+<br />
+While looking at <span style="font-family: Courier New, Courier, monospace;">jetbrains-idea.desktop</span> launcher file for IntelliJ IDEA, I’ve noticed it uses the same approach and I’ve never had a problem with it in Docky, so I assume this approach may be reliable in a longer run.<br />
+<br />
+Btw. <a href="http://www.ubuntugeek.com/menulibre-menu-editor-for-gnome-and-unity.html">MenuLibre</a> has been very useful to manage all the launchers in Ubuntu. With Unity, the old-fashioned application’s categories are not present in the UI any more. If allows you to change the *.desktop files manually in built-in editor or use GUI to form the file content’s for you (selecting the executable file and icon using pop-up dialog etc.)</p>
+
+<p><em>This was originally posted on blogger <a href="https://josef-sustacek-ee.blogspot.com/2013/02/smartgithg-4-and-docky-in-ubuntu-1210.html">here</a></em>.</p>
+
+  </div><a class="u-url" href="/2013/02/12/2013-02-smartgithg-4-and-docky-in-ubuntu-1210.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">Josef Šustáček</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Josef Šustáček</li>
+          <!-- CUSTOM BEGIN --> 
+          <li>+420 777 693 353</li><li>me[at]josefsustacek.cz</li><!-- CUSTOM END --> 
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/sustacek"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">sustacek</span></a></li><li><a href="https://www.linkedin.com/in/josefsustacek"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">josefsustacek</span></a></li><li><a href="https://www.twitter.com/sustacek"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">sustacek</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Josef Šustáček -- Independent software developer with 15+ years of experience in the Java ecosystem. Ex-Liferay Global Services consultant, contributing to Liferay projects&#39; development  and operations. Amazon Web Services (AWS), CI/CD, code reviews, performance analysis  and tuning.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer></body>
+
+</html>
