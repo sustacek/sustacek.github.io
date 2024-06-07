@@ -1,1 +1,9 @@
+/src/jekyll/_site
+/src/jekyll/vendor
+
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+
+.idea/
 .DS_Store

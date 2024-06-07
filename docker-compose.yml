@@ -1,0 +1,16 @@
+# Local init: 
+#     docker run -v $(pwd)/src/jekyll:/site bretfisher/jekyll new .
+
+services:
+  jekyll-serve:
+    image: bretfisher/jekyll-serve
+    volumes:
+      - ./src/jekyll:/site
+    ports:
+      - '4000:4000'
+
+    # develop:
+    #   watch:
+    #     - action: sync+restart
+    #       path: ./src/jekyll/_config.yml
+    #       target: /site
