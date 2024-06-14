@@ -31,7 +31,7 @@ I have an excellent handle on English, both written and spoken, gained thanks to
 * Monitoring: JMX, Dynatrace, Datadog
 
 <div class="call-to-action">
-    <a href="/files/resume/Josef-Sustacek-CV.pdf"> Full Resume (CV) </a>
+    <a href="/files/resume/Josef-Sustacek-CV-20240614.pdf"> Full Resume (CV) </a>
 </div>
 
 [cert-liferay-61]: /files/certificates/liferay_portal_dev_61_Josef-Sustacek.pdf "Liferay Certified 6.1 Professional Developer - Josef Šustáček"
