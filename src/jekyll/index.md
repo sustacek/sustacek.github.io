@@ -6,9 +6,9 @@ layout: page
 title: Home
 ---
 
-Hi, welcome to my site! My name is Josef Šustáček, I am an independent Java and Liferay Developer who loves to create quality code and provide reliable, well tested and documented solutions. I have over 15 years of software development experience and consulting.  
+Hi! My name is Josef Šustáček, I am a Java Developer and Software Engineer who loves to create quality code and provide reliable, well tested and documented solutions. I have over 15 years of software development and consulting experience.  
 
-I am an ex-Liferay Global services consultant with experience in Liferay platform spanning versions 5.2.1 up to the latest DXP 7.4 / quarterly releases. I did an extensive work in AWS cloud as well, creating a complete development and runtime ecosystem for Liferay DXP, including developer experience using Liferay Workspace, CI/CD using Jenkins and EC2 as the runtime for app servers.
+I am an ex-Liferay Global Services consultant with experience in Liferay platform spanning versions 5.2.1 up to the latest DXP 7.4 / quarterly releases. I did an extensive work in AWS cloud as well, creating a complete development and runtime ecosystem for Liferay DXP, including developer experience using Liferay Workspace, CI/CD using Jenkins and EC2 as the runtime for app servers.
 
 If you want to find out more about my experience, see the [About][about] page.
 
