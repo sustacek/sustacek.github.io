@@ -21,8 +21,9 @@ I have an excellent handle on English, both written and spoken, gained thanks to
 * Liferay Certified Professional -- Liferay Portal 6.1 Developer ([certificate][cert-liferay-61]) with over 16 years of experience as developer
 
 # Skills
+* Java development
 * Object-oriented design and analysis
-* Java Portals: Liferay
+* Java Portals: Liferay, JSR 286
 * Open Source Libraries and Frameworks: Spring, OSGi
 * Development: JUnit, Spock, PowerMock, Mockito 
 * DevOps: Linux, Tomcat, Nginx, MySQL/MariaDB, Git, Gradle, Maven, Ant, Docker, Jekyll
