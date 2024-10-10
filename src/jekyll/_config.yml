@@ -22,9 +22,11 @@ phone: +420 777 693 353
 # END Custom variables
 
 # Build settings
+# TODO check out https://mmistakes.github.io/minimal-mistakes/docs/helpers/
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
   # - jekyll-paginate
 
 # Config available for the "minima" theme 
@@ -33,7 +35,8 @@ header_pages:
   - _pages/about.md
   - _pages/blog.md
   - _pages/personal-finance.md
-  - _pages/woodworking.md
+  - _pages/diy.md
+  - _pages/solar.md
   - _pages/contact.md
 
 show_excerpts: true   # in list of posts on "home" layout

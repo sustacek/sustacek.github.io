@@ -12,11 +12,11 @@ I am an ex-Liferay Global Services consultant with experience in Liferay platfor
 
 If you want to find out more about my experience, see the [About][about] page.
 
-Aside from software development, I like working with wood and fixing things -- giving them a new life and preventing their (wasteful) disposal. You can find out more in [Woodworking][woodworking]. I also enjoy personal finance and investing, more on that in [Personal Finance][personal-finance].
+Aside from software development, I like working with wood and fixing things -- giving them a new life and preventing their (wasteful) disposal. You can find out more in [DIY][diy]. I also enjoy personal finance and investing, more on that in [Personal Finance][personal-finance].
 
 When not building of fixing stuff, I like playing volleyball and beach volleyball, mountain biking in the countryside and spending time with our kids. I started to go climbing / bouldering thanks to my kids, but I have a long way to go to catch up to their idol -- [Adam Ondra][adam-ondra] :-) I picked up playing ukulele few years back and hope to learn basics of acoustic guitar as well.
 
-[about]: </about> "About"
-[woodworking]: </woodworking> "Woodworking"
-[personal-finance]: </personal-finance> "Personal Finance"
-[adam-ondra]: <https://www.adamondra.com/cz/> "Adam Ondra"
+[about]: /about "About"
+[diy]: </diy> "DIY"
+[personal-finance]: /personal-finance "Personal Finance"
+[adam-ondra]: https://www.adamondra.com/cz/ "Adam Ondra"
