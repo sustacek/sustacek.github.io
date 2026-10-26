@@ -3,6 +3,8 @@
 # - Pull requests: build only (verifies that the site compiles, nothing is published).
 # - Push to `main` / manual run: build and deploy.
 #
+# All actions are pinned to full commit SHAs (the tag is in the trailing comment).
+#
 # NOTE: In the repository settings, Pages -> Build and deployment -> Source must be
 # "Deploy from a branch" with branch `gh-pages` and folder `/ (root)`.
 name: Build and deploy to gh-pages
@@ -27,15 +29,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      # pnpm version is taken from the "packageManager" field in package.json
+      # pnpm version is taken from the "packageManager" field in package.json.
+      # pnpm/setup is the successor of pnpm/action-setup for pnpm 11 and newer.
+      # It installs dependencies by default; that is done explicitly below instead.
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e # v3.1.2
+        with:
+          install: false
 
       # Node version is taken from .nvmrc
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version-file: .nvmrc
           cache: pnpm
@@ -48,7 +54,7 @@ jobs:
 
       - name: Deploy to gh-pages branch
         if: github.event_name != 'pull_request'
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
