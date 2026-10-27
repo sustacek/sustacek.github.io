@@ -22,7 +22,7 @@ pnpm serve      # serve the production build locally
 | Path                      | Content                                         |
 |---------------------------|-------------------------------------------------|
 | `src/pages/`              | Home, About, Contact, Personal Finance, Solar   |
-| `blog/`                   | Blog posts (`YYYY-MM-DD-slug.md`)               |
+| `src/blog/`               | Blog posts (`YYYY-MM-DD-slug.md`)               |
 | `diy/`                    | DIY section (served at `/diy`, with a sidebar)  |
 | `static/`                 | Files served as-is: resume, certificates, CNAME |
 | `docusaurus.config.js`    | Site config, navbar, footer, redirects          |

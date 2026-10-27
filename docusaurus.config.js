@@ -90,7 +90,7 @@ const config = {
           sidebarPath: './sidebars.js',
         },
         blog: {
-          path: 'blog',
+          path: 'src/blog',
           routeBasePath: 'blog',
           blogTitle: 'Blog',
           blogDescription: 'Occasional posts by Josef Šustáček about Java, Liferay, AWS and tooling.',
