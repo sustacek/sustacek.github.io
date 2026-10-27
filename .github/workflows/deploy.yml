@@ -1,0 +1,80 @@
+# Builds the Docusaurus site with pnpm and publishes it to the `gh-pages` branch.
+#
+# - Pull requests: build only (verifies that the site compiles, nothing is published).
+# - Push to `main` / manual run: build and deploy.
+#
+# All actions are pinned to full commit SHAs (the tag is in the trailing comment).
+#
+# NOTE: In the repository settings, Pages -> Build and deployment -> Source must be
+# "Deploy from a branch" with branch `gh-pages` and folder `/ (root)`.
+name: Build and deploy to gh-pages
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  workflow_dispatch:
+
+# peaceiris/actions-gh-pages pushes to the gh-pages branch using GITHUB_TOKEN
+permissions:
+  contents: write
+
+# Only one deployment at a time; never cancel a deployment that is already running
+concurrency:
+  group: gh-pages-deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # pnpm version is taken from the "packageManager" field in package.json.
+      # pnpm/setup is the successor of pnpm/action-setup for pnpm 11 and newer.
+      # It installs dependencies by default; that is done explicitly below instead.
+      - name: Setup pnpm
+        uses: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e # v3.1.2
+        with:
+          install: false
+
+      # Node version is taken from .nvmrc
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build site
+        run: pnpm build
+
+      # The old Jekyll site published its (Atom) feed at /feed.xml. A redirect cannot work for
+      # feed readers, so serve the Docusaurus feed at the old location too.
+      - name: Keep old /feed.xml URL
+        run: cp build/blog/atom.xml build/feed.xml
+
+      # Fail the build if the old-URL redirect pages were not generated
+      - name: Verify legacy URLs
+        run: |
+          test -s build/feed.xml
+          test -s build/CNAME
+          test -s build/files/resume/Josef-Sustacek-CV-20240708.pdf
+          # files must be linked by their stable /files/... URL, not as hashed /assets/files/... copies
+          if grep -rl 'assets/files/' build --include='*.html'; then
+            echo "::error::Pages link to hashed /assets/files/ copies, use pathname:/// links"
+            exit 1
+          fi
+          test -n "$(find build -name '2013-01-opends-testing-ldap-server*' -print -quit)"
+
+      - name: Deploy to gh-pages branch
+        if: github.event_name != 'pull_request'
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          # the custom domain is kept by src/static/CNAME, which Docusaurus copies into ./build
+          force_orphan: true

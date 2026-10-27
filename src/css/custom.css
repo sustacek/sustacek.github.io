@@ -1,0 +1,23 @@
+/**
+ * Site-wide style overrides on top of the Docusaurus classic theme (Infima).
+ */
+:root {
+  --ifm-color-primary: #2e6f95;
+  --ifm-color-primary-dark: #296384;
+  --ifm-color-primary-darker: #275c7c;
+  --ifm-color-primary-darkest: #204c66;
+  --ifm-color-primary-light: #337ba6;
+  --ifm-color-primary-lighter: #3582ae;
+  --ifm-color-primary-lightest: #4a97c5;
+  --ifm-code-font-size: 95%;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #6db3dc;
+  --ifm-color-primary-dark: #4fa3d4;
+  --ifm-color-primary-darker: #419bd0;
+  --ifm-color-primary-darkest: #2381b9;
+  --ifm-color-primary-light: #8bc2e3;
+  --ifm-color-primary-lighter: #99c9e7;
+  --ifm-color-primary-lightest: #bcdbee;
+}
