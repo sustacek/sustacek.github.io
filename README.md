@@ -1,7 +1,7 @@
 # josefsustacek.cz
 
 Source of https://www.josefsustacek.cz/, built with [Docusaurus](https://docusaurus.io/) and
-deployed to GitHub Pages (`gh-pages` branch) by GitHub Actions.
+deployed to GitHub Pages by GitHub Actions.
 
 ## Requirements
 
@@ -24,16 +24,15 @@ pnpm serve      # serve the production build locally
 | `src/pages/`              | Home, About, Contact, Personal Finance, Solar   |
 | `src/blog/`               | Blog posts (`YYYY-MM-DD-slug.md`)               |
 | `src/diy/`                | DIY section (served at `/diy`, with a sidebar)  |
-| `src/static/`             | Files served as-is: resume, certificates, CNAME |
+| `src/static/`             | Files served as-is: resume, certificates        |
 | `docusaurus.config.js`    | Site config, navbar, footer, redirects          |
 | `.github/workflows/`      | Build and deploy workflow                       |
 
 ## Deployment
 
 `.github/workflows/deploy.yml` builds the site on every pull request and on every push to `main`;
-pushes to `main` (and manual runs) additionally publish `./build` to the `gh-pages` branch using
-[peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages).
+pushes to `main` (and manual runs) additionally deploy it to GitHub Pages using the official
+`actions/upload-pages-artifact` and `actions/deploy-pages` actions.
 
-In the repository settings, **Pages -> Build and deployment -> Source** has to be
-*Deploy from a branch*, branch `gh-pages`, folder `/ (root)`. The custom domain is kept by
-`src/static/CNAME`.
+In the repository settings, **Pages -> Build and deployment -> Source** has to be *GitHub Actions*.
+The custom domain is configured there as well (the `CNAME` file is not used by this deployment type).
