@@ -28,8 +28,6 @@ pnpm serve      # serve the production build locally
 | `docusaurus.config.js`    | Site config, navbar, footer, redirects          |
 | `.github/workflows/`      | Build and deploy workflow                       |
 
-`src/blogger_export/` keeps the original Blogger export the legacy blog posts were taken from.
-
 ## Deployment
 
 `.github/workflows/deploy.yml` builds the site on every pull request and on every push to `main`;
