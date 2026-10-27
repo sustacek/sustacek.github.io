@@ -193,16 +193,16 @@ importers:
     dependencies:
       '@docusaurus/core':
         specifier: 3.10.2
-        version: 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+        version: 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/plugin-client-redirects':
         specifier: 3.10.2
-        version: 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+        version: 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/preset-classic':
         specifier: 3.10.2
-        version: 3.10.2(@algolia/client-search@5.60.0)(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(search-insights@2.17.3)(supports-color@8.1.1)(svgo@3.3.5)
+        version: 3.10.2(@algolia/client-search@5.60.0)(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(search-insights@2.17.3)(supports-color@8.1.1)(svgo@3.3.5)
       '@mdx-js/react':
-        specifier: 3.1.0
-        version: 3.1.0(@types/react@19.3.0)(react@19.3.1)
+        specifier: 3.1.1
+        version: 3.1.1(@types/react@19.3.0)(react@19.3.1)
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -1560,8 +1560,8 @@ packages:
   '@mdx-js/mdx@3.1.1':
     resolution: {integrity: sha512-f6ZO2ifpwAQIpzGWaBQT2TXxPv6z3RBzQKpVftEWN78Vl/YweF1uwussDx8ECAXVtr3Rs89fKyG9YlzUs9DyGQ==}
 
-  '@mdx-js/react@3.1.0':
-    resolution: {integrity: sha512-QjHtSaoameoalGnKDT3FoIl4+9RwyTmo9ZJGBdLOks/YOiWHoRDI3PUwEzOE7kEmGcV3AFcp9K6dYu9rEuKLAQ==}
+  '@mdx-js/react@3.1.1':
+    resolution: {integrity: sha512-f++rKLQgUVYDAtECQ6fn/is15GkEH9+nZPM3MS0RcxVqoTfawHvDlSCH7JbMhAM6uJ32v3eXLvLmLvjGu7PTQw==}
     peerDependencies:
       '@types/react': '>=16'
       react: '>=16'
@@ -6595,7 +6595,7 @@ snapshots:
       - uglify-js
       - webpack-cli
 
-  '@docusaurus/core@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/core@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
       '@docusaurus/babel': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/bundler': 3.10.2(csso@5.0.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
@@ -6604,7 +6604,7 @@ snapshots:
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils-common': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils-validation': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@mdx-js/react': 3.1.0(@types/react@19.3.0)(react@19.3.1)
+      '@mdx-js/react': 3.1.1(@types/react@19.3.0)(react@19.3.1)
       boxen: 6.2.1
       chalk: 4.1.2
       chokidar: 3.6.0
@@ -6759,9 +6759,9 @@ snapshots:
       - uglify-js
       - webpack-cli
 
-  '@docusaurus/plugin-client-redirects@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/plugin-client-redirects@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
-      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/logger': 3.10.2
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils-common': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
@@ -6800,13 +6800,13 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@docusaurus/plugin-content-blog@3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/plugin-content-blog@3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
-      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/logger': 3.10.2
       '@docusaurus/mdx-loader': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-content-docs': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/theme-common': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-content-docs': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/theme-common': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/types': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils-common': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
@@ -6852,13 +6852,13 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
-      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/logger': 3.10.2
       '@docusaurus/mdx-loader': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/module-type-aliases': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/theme-common': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/theme-common': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/types': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils-common': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
@@ -6902,9 +6902,9 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@docusaurus/plugin-content-pages@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/plugin-content-pages@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
-      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/mdx-loader': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/types': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
@@ -6942,9 +6942,9 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@docusaurus/plugin-css-cascade-layers@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/plugin-css-cascade-layers@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
-      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/types': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils-validation': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
@@ -6979,9 +6979,9 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@docusaurus/plugin-debug@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/plugin-debug@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
-      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/types': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       fs-extra: 11.4.1
@@ -7017,9 +7017,9 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@docusaurus/plugin-google-analytics@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/plugin-google-analytics@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
-      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/types': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils-validation': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       react: 19.3.1
@@ -7053,9 +7053,9 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@docusaurus/plugin-google-gtag@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/plugin-google-gtag@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
-      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/types': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils-validation': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       react: 19.3.1
@@ -7089,9 +7089,9 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@docusaurus/plugin-google-tag-manager@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/plugin-google-tag-manager@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
-      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/types': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils-validation': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       react: 19.3.1
@@ -7125,9 +7125,9 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@docusaurus/plugin-sitemap@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/plugin-sitemap@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
-      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/logger': 3.10.2
       '@docusaurus/types': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
@@ -7166,9 +7166,9 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@docusaurus/plugin-svgr@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/plugin-svgr@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
-      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/types': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils-validation': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
@@ -7206,22 +7206,22 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@docusaurus/preset-classic@3.10.2(@algolia/client-search@5.60.0)(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(search-insights@2.17.3)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/preset-classic@3.10.2(@algolia/client-search@5.60.0)(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(search-insights@2.17.3)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
-      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-content-blog': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-content-docs': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-content-pages': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-css-cascade-layers': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-debug': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-google-analytics': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-google-gtag': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-google-tag-manager': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-sitemap': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-svgr': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-content-blog': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-content-docs': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-content-pages': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-css-cascade-layers': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-debug': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-google-analytics': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-google-gtag': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-google-tag-manager': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-sitemap': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-svgr': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/theme-classic': 3.10.2(@types/react@19.3.0)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/theme-common': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/theme-search-algolia': 3.10.2(@algolia/client-search@5.60.0)(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(search-insights@2.17.3)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/theme-common': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/theme-search-algolia': 3.10.2(@algolia/client-search@5.60.0)(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(search-insights@2.17.3)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/types': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
@@ -7263,20 +7263,20 @@ snapshots:
 
   '@docusaurus/theme-classic@3.10.2(@types/react@19.3.0)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
-      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/logger': 3.10.2
       '@docusaurus/mdx-loader': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/module-type-aliases': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-content-blog': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-content-docs': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-content-pages': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/theme-common': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-content-blog': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-content-docs': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-content-pages': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/theme-common': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/theme-translations': 3.10.2
       '@docusaurus/types': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils-common': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils-validation': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@mdx-js/react': 3.1.0(@types/react@19.3.0)(react@19.3.1)
+      '@mdx-js/react': 3.1.1(@types/react@19.3.0)(react@19.3.1)
       clsx: 2.1.1
       copy-text-to-clipboard: 3.2.2
       infima: 0.2.0-alpha.45
@@ -7318,11 +7318,11 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@docusaurus/theme-common@3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/theme-common@3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
       '@docusaurus/mdx-loader': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/module-type-aliases': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/plugin-content-docs': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-content-docs': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils-common': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@types/history': 4.7.11
@@ -7355,14 +7355,14 @@ snapshots:
       - uglify-js
       - webpack-cli
 
-  '@docusaurus/theme-search-algolia@3.10.2(@algolia/client-search@5.60.0)(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(search-insights@2.17.3)(supports-color@8.1.1)(svgo@3.3.5)':
+  '@docusaurus/theme-search-algolia@3.10.2(@algolia/client-search@5.60.0)(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(search-insights@2.17.3)(supports-color@8.1.1)(svgo@3.3.5)':
     dependencies:
       '@algolia/autocomplete-core': 1.19.12(@algolia/client-search@5.60.0)(algoliasearch@5.60.0)(search-insights@2.17.3)
       '@docsearch/react': 4.7.1(@algolia/client-search@5.60.0)(@types/react@19.3.0)(algoliasearch@5.60.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(search-insights@2.17.3)
-      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/logger': 3.10.2
-      '@docusaurus/plugin-content-docs': 3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
-      '@docusaurus/theme-common': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/plugin-content-docs': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/theme-common': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/theme-translations': 3.10.2
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
       '@docusaurus/utils-validation': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.31))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)
@@ -7752,7 +7752,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@mdx-js/react@3.1.0(@types/react@19.3.0)(react@19.3.1)':
+  '@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1)':
     dependencies:
       '@types/mdx': 2.0.14
       '@types/react': 19.3.0
