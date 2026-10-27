@@ -1,5 +1,4 @@
 ---
-slug: opends-testing-ldap-server
 title: OpenDS -- testing LDAP server
 authors: [js]
 tags: [ldap, development, java]

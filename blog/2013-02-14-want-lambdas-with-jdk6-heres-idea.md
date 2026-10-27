@@ -1,5 +1,4 @@
 ---
-slug: want-lambdas-with-jdk6-heres-idea
 title: Want lambdas with jdk6? Here's an IDEA
 authors: [js]
 tags: [idea, development, java, lambda]

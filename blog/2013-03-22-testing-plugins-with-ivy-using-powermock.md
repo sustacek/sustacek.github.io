@@ -1,5 +1,4 @@
 ---
-slug: testing-plugins-with-ivy-using-powermock
 title: Testing plugins with Ivy using Powermock
 authors: [js]
 tags: [test, plugins, mock, liferay, junit]

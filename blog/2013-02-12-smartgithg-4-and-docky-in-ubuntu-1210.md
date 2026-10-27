@@ -1,5 +1,4 @@
 ---
-slug: smartgithg-4-and-docky-in-ubuntu-1210
 title: SmartGit/Hg 4 and Docky in Ubuntu 12.10
 authors: [js]
 tags: [ubuntu, linux, docky, smartgithg, java]

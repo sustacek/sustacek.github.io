@@ -1,5 +1,4 @@
 ---
-slug: cloud-formation-boolean-as-parameter-in
 title: Cloud Formation - Boolean as Parameter in template
 authors: [js]
 tags: [cloudformation, aws]

@@ -1,5 +1,4 @@
 ---
-slug: creating-unit-tests-in-core-liferay
 title: Creating unit tests in core Liferay sources
 authors: [js]
 tags: [test, development, mock, liferay, java, junit]
