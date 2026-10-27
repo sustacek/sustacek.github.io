@@ -36,3 +36,10 @@ pushes to `main` (and manual runs) additionally deploy it to GitHub Pages using 
 
 In the repository settings, **Pages -> Build and deployment -> Source** has to be *GitHub Actions*.
 The custom domain is configured there as well (the `CNAME` file is not used by this deployment type).
+
+## Dependency updates
+
+[Renovate](https://docs.renovatebot.com/) runs once a day (`.github/workflows/renovate.yml`, configuration in
+`renovate.json5`) and opens pull requests for outdated npm packages, pnpm, Node.js and GitHub Actions.
+It needs a repository secret `RENOVATE_TOKEN` (a fine-grained personal access token, see the comment in the
+workflow), so that the pull requests it creates trigger the build workflow.
