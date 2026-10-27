@@ -1,0 +1,32 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+
+  // Best practices include pinning GitHub Actions to commit SHAs (keeping the version in a comment)
+  extends: ['config:best-practices'],
+
+  timezone: 'Europe/Prague',
+
+  // Keep exact versions in package.json (no ^ or ~)
+  rangeStrategy: 'pin',
+
+  // Wait a few days after a release before proposing it
+  minimumReleaseAge: '3 days',
+
+  // Also refresh the transitive dependencies in pnpm-lock.yaml
+  lockFileMaintenance: {
+    enabled: true,
+    schedule: ['before 6am on monday'],
+  },
+
+  packageRules: [
+    {
+      // Docusaurus packages must be upgraded together
+      groupName: 'Docusaurus',
+      matchPackageNames: ['@docusaurus/**'],
+    },
+    {
+      groupName: 'React',
+      matchPackageNames: ['react', 'react-dom'],
+    },
+  ],
+}

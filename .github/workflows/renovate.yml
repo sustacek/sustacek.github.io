@@ -1,0 +1,42 @@
+# Runs Renovate once a day (and on demand) to open pull requests with dependency updates.
+# Configuration: renovate.json5
+#
+# Requires a repository secret RENOVATE_TOKEN: a fine-grained personal access token for this
+# repository with these repository permissions:
+#   - Contents: read and write
+#   - Pull requests: read and write
+#   - Workflows: read and write
+#   - Issues: read and write
+#   - Metadata: read
+# A personal access token is needed (not GITHUB_TOKEN), because pull requests created with
+# GITHUB_TOKEN do not trigger the build workflow.
+name: Renovate
+
+on:
+  schedule:
+    - cron: "17 3 * * *" # every day, 03:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: renovate
+  cancel-in-progress: false
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Run Renovate
+        uses: renovatebot/github-action@2804199d260ad00c1fae0e9e842888369391c776 # v46.3.10
+        with:
+          token: ${{ secrets.RENOVATE_TOKEN }}
+        env:
+          RENOVATE_REPOSITORIES: ${{ github.repository }}
+          # the configuration is committed in renovate.json5, no onboarding PR needed
+          RENOVATE_ONBOARDING: "false"
+          LOG_LEVEL: info
