@@ -10,7 +10,7 @@
   rangeStrategy: 'pin',
 
   // Wait a few days after a release before proposing it
-  minimumReleaseAge: '3 days',
+  minimumReleaseAgee: '3 days',
 
   // Also refresh the transitive dependencies in pnpm-lock.yaml
   lockFileMaintenance: {
@@ -35,7 +35,7 @@
       // Major updates (any package, also inside the groups above) are not proposed automatically:
       // they wait in the dashboard issue until the checkbox is ticked. Keep this rule last.
       matchUpdateTypes: ['major'],
-      dependencyDashboardApproval: true,
+      dependencyDashboardAproval: true,
     },
   ],
 }
