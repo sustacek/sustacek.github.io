@@ -2,8 +2,12 @@
 # Configuration: renovate.json5
 #
 # Requires a repository secret RENOVATE_TOKEN: a fine-grained personal access token for this
-# repository with these permissions: Contents (read and write), Pull requests (read and write),
-# Workflows (read and write), Issues (read and write), Metadata (read).
+# repository with these repository permissions:
+#   - Contents: read and write
+#   - Pull requests: read and write
+#   - Workflows: read and write
+#   - Issues: read and write
+#   - Metadata: read
 # A personal access token is needed (not GITHUB_TOKEN), because pull requests created with
 # GITHUB_TOKEN do not trigger the build workflow.
 name: Renovate
