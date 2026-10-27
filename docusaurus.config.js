@@ -155,9 +155,12 @@ const config = {
           {
             title: 'More',
             items: [
-              // {label: 'Resume (CV, PDF)', href: '/files/resume/Josef-Sustacek-CV-20240708.pdf'},
-              // {label: 'Blog (Atom)', href: '/blog/atom.xml'},
-              // {label: 'Blog (RSS)', href: '/blog/rss.xml'},
+              // 'pathname://' marks these as plain files (not Docusaurus routes): they open
+              // directly instead of going through the client-side router, and are not
+              // checked by the broken links check.
+              {label: 'Resume (CV, PDF)', href: 'pathname:///files/resume/Josef-Sustacek-CV-20240708.pdf'},
+              {label: 'Blog (Atom)', href: 'pathname:///blog/atom.xml'},
+              {label: 'Blog (RSS)', href: 'pathname:///blog/rss.xml'},
             ],
           },
         ],
