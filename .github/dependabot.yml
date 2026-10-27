@@ -9,3 +9,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+
+# Don't suggest packages for update unless they are few days old
+cooldown:
+  default-days: 3      
