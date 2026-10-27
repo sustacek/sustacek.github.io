@@ -90,7 +90,7 @@ const config = {
         docs: {
           path: 'src/diy',
           routeBasePath: 'diy',
-          sidebarPath: './sidebars.js',
+          sidebarPath: './src/sidebars.js',
         },
         blog: {
           path: 'src/blog',
