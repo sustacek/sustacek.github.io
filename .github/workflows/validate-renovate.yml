@@ -1,0 +1,49 @@
+# Validates renovate.json5 with Renovate's own validator (renovate-config-validator).
+# Runs only when the Renovate configuration (or this workflow) changes.
+#
+# There is no official GitHub Action for this, the validator is a CLI shipped in the `renovate`
+# npm package, which is run here with npx.
+name: Validate Renovate config
+
+on:
+  pull_request:
+    paths:
+      - renovate.json5
+      - .github/workflows/validate-renovate.yml
+  push:
+    branches: ["main"]
+    paths:
+      - renovate.json5
+      - .github/workflows/validate-renovate.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      # Keep in sync with the Renovate version the bot uses: it is logged at the start of every run
+      # of the Renovate workflow ("Renovate CLI version ...") and comes with renovatebot/github-action.
+      RENOVATE_VERSION: 44.190.0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # Node version is taken from .nvmrc
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+
+      # --strict also fails when the config uses deprecated options that need a migration.
+      # The validator output is repeated as an error annotation, so it is visible on the run summary.
+      - name: Validate renovate.json5
+        run: |
+          if ! output=$(npx --yes --package "renovate@${RENOVATE_VERSION}" -- renovate-config-validator --strict renovate.json5 2>&1); then
+            echo "$output"
+            echo "::error title=Invalid Renovate config::$(echo "$output" | tail -n 15 | sed ':a;N;$!ba;s/\n/%0A/g')"
+            exit 1
+          fi
+          echo "$output"
