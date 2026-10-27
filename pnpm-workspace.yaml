@@ -1,2 +1,5 @@
+# 3 days
+minimumReleaseAge: 4320
+
 allowBuilds:
   core-js: false
