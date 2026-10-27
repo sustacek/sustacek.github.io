@@ -85,7 +85,7 @@ const config = {
       ({
         // The docs plugin hosts the DIY section, served at /diy.
         docs: {
-          path: 'diy',
+          path: 'src/diy',
           routeBasePath: 'diy',
           sidebarPath: './sidebars.js',
         },
