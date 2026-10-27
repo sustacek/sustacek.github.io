@@ -24,7 +24,7 @@ pnpm serve      # serve the production build locally
 | `src/pages/`              | Home, About, Contact, Personal Finance, Solar   |
 | `src/blog/`               | Blog posts (`YYYY-MM-DD-slug.md`)               |
 | `src/diy/`                | DIY section (served at `/diy`, with a sidebar)  |
-| `static/`                 | Files served as-is: resume, certificates, CNAME |
+| `src/static/`             | Files served as-is: resume, certificates, CNAME |
 | `docusaurus.config.js`    | Site config, navbar, footer, redirects          |
 | `.github/workflows/`      | Build and deploy workflow                       |
 
@@ -36,4 +36,4 @@ pushes to `main` (and manual runs) additionally publish `./build` to the `gh-pag
 
 In the repository settings, **Pages -> Build and deployment -> Source** has to be
 *Deploy from a branch*, branch `gh-pages`, folder `/ (root)`. The custom domain is kept by
-`static/CNAME`.
+`src/static/CNAME`.

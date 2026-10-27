@@ -17,6 +17,9 @@ const config = {
   // Keep the URLs of the old Jekyll site (/about, /blog, ...) without trailing slash.
   trailingSlash: false,
 
+  // Files served as-is (resume, certificates, CNAME, favicon ...)
+  staticDirectories: ['src/static'],
+
   organizationName: 'sustacek',
   projectName: 'sustacek.github.io',
 

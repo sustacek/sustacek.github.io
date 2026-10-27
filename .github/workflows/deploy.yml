@@ -61,6 +61,8 @@ jobs:
       - name: Verify legacy URLs
         run: |
           test -s build/feed.xml
+          test -s build/CNAME
+          test -s build/files/resume/Josef-Sustacek-CV-20240708.pdf
           test -n "$(find build -name '2013-01-opends-testing-ldap-server*' -print -quit)"
 
       - name: Deploy to gh-pages branch
@@ -69,5 +71,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          # the custom domain is kept by static/CNAME, which Docusaurus copies into ./build
+          # the custom domain is kept by src/static/CNAME, which Docusaurus copies into ./build
           force_orphan: true
