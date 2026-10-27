@@ -63,6 +63,11 @@ jobs:
           test -s build/feed.xml
           test -s build/CNAME
           test -s build/files/resume/Josef-Sustacek-CV-20240708.pdf
+          # files must be linked by their stable /files/... URL, not as hashed /assets/files/... copies
+          if grep -rl 'assets/files/' build --include='*.html'; then
+            echo "::error::Pages link to hashed /assets/files/ copies, use pathname:/// links"
+            exit 1
+          fi
           test -n "$(find build -name '2013-01-opends-testing-ldap-server*' -print -quit)"
 
       - name: Deploy to gh-pages branch

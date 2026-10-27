@@ -18,7 +18,7 @@ I have an excellent handle on English, both written and spoken, gained thanks to
 * Worked for various clients of Liferay Global Services, including media publishing company, building materials' manufacturer, national train transportation company or municipality systems provider.
 * Built complete runtime for Liferay in AWS (EC2, RDS, S3, CloudFormation), including CI/CD using Jenkins. Successfully used for several Liferay GS customers as the Manged Services initiative, before the birth of Liferay PaaS.
 * Contributed to Liferay PaaS in its early phases (formerly Liferay Experience Cloud platform - LXC) -- mostly defined and implemented developer experience and CI/CD system based on Gradle, Jenkins and Docker.
-* Liferay Certified Professional -- Liferay Portal 6.1 Developer ([certificate](/files/certificates/liferay_portal_dev_61_Josef-Sustacek.pdf)) with over 16 years of experience as developer
+* Liferay Certified Professional -- Liferay Portal 6.1 Developer ([certificate](pathname:///files/certificates/liferay_portal_dev_61_Josef-Sustacek.pdf)) with over 16 years of experience as developer
 
 ## Skills
 
@@ -32,4 +32,4 @@ I have an excellent handle on English, both written and spoken, gained thanks to
 * Virtualization & Cloud: Amazon Web Services (AWS)
 * Monitoring: JMX, Dynatrace, Datadog
 
-**[Full Resume (CV)](/files/resume/Josef-Sustacek-CV-20240708.pdf)**
+**[Full Resume (CV)](pathname:///files/resume/Josef-Sustacek-CV-20240708.pdf)**
