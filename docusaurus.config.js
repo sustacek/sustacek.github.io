@@ -43,39 +43,39 @@ const config = {
   ],
 
   plugins: [
-    // [
-    //   // Keep old Jekyll URLs of the blog posts and the feed working.
-    //   '@docusaurus/plugin-client-redirects',
-    //   {
-    //     redirects: [
-    //       {
-    //         from: '/2013/01/10/2013-01-opends-testing-ldap-server.html',
-    //         to: '/blog/2013/01/10/opends-testing-ldap-server',
-    //       },
-    //       {
-    //         from: '/2013/02/05/2013-02-creating-unit-tests-in-core-liferay.html',
-    //         to: '/blog/2013/02/05/creating-unit-tests-in-core-liferay',
-    //       },
-    //       {
-    //         from: '/2013/02/12/2013-02-smartgithg-4-and-docky-in-ubuntu-1210.html',
-    //         to: '/blog/2013/02/12/smartgithg-4-and-docky-in-ubuntu-1210',
-    //       },
-    //       {
-    //         from: '/2013/02/14/2013-02-want-lambdas-with-jdk6-heres-idea.html',
-    //         to: '/blog/2013/02/14/want-lambdas-with-jdk6-heres-idea',
-    //       },
-    //       {
-    //         from: '/2013/03/22/2013-03-testing-plugins-with-ivy-using-powermock.html',
-    //         to: '/blog/2013/03/22/testing-plugins-with-ivy-using-powermock',
-    //       },
-    //       {
-    //         from: '/2016/09/15/2016-09-cloud-formation-boolean-as-parameter-in.html',
-    //         to: '/blog/2016/09/15/cloud-formation-boolean-as-parameter-in',
-    //       },
-    //       {from: '/feed.xml', to: '/blog/rss.xml'},
-    //     ],
-    //   },
-    // ],
+    [
+      // Keep old Jekyll URLs of the blog posts working.
+      // (/feed.xml is handled in the deploy workflow, as it is not a route.)
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/2013/01/10/2013-01-opends-testing-ldap-server.html',
+            to: '/blog/2013/01/10/opends-testing-ldap-server',
+          },
+          {
+            from: '/2013/02/05/2013-02-creating-unit-tests-in-core-liferay.html',
+            to: '/blog/2013/02/05/creating-unit-tests-in-core-liferay',
+          },
+          {
+            from: '/2013/02/12/2013-02-smartgithg-4-and-docky-in-ubuntu-1210.html',
+            to: '/blog/2013/02/12/smartgithg-4-and-docky-in-ubuntu-1210',
+          },
+          {
+            from: '/2013/02/14/2013-02-want-lambdas-with-jdk6-heres-idea.html',
+            to: '/blog/2013/02/14/want-lambdas-with-jdk6-heres-idea',
+          },
+          {
+            from: '/2013/03/22/2013-03-testing-plugins-with-ivy-using-powermock.html',
+            to: '/blog/2013/03/22/testing-plugins-with-ivy-using-powermock',
+          },
+          {
+            from: '/2016/09/15/2016-09-cloud-formation-boolean-as-parameter-in.html',
+            to: '/blog/2016/09/15/cloud-formation-boolean-as-parameter-in',
+          },
+        ],
+      },
+    ],
   ],
 
   presets: [
