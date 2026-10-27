@@ -18,6 +18,9 @@
     schedule: ['before 6am on monday'],
   },
 
+  // Dependency Dashboard issue: overview of all updates, with checkboxes for those awaiting approval
+  dependencyDashboard: true,
+
   packageRules: [
     {
       // Docusaurus packages must be upgraded together
@@ -27,6 +30,12 @@
     {
       groupName: 'React',
       matchPackageNames: ['react', 'react-dom'],
+    },
+    {
+      // Major updates (any package, also inside the groups above) are not proposed automatically:
+      // they wait in the dashboard issue until the checkbox is ticked. Keep this rule last.
+      matchUpdateTypes: ['major'],
+      dependencyDashboardApproval: true,
     },
   ],
 }
