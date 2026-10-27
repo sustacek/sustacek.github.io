@@ -39,4 +39,4 @@ jobs:
           RENOVATE_REPOSITORIES: ${{ github.repository }}
           # the configuration is committed in renovate.json5, no onboarding PR needed
           RENOVATE_ONBOARDING: "false"
-          LOG_LEVEL: info
+          LOG_LEVEL: debug
