@@ -15,6 +15,7 @@
   dependencyDashboard: {
     enabled: true,
   },
+  prHourlyLimit: 0,
   packageRules: [
     {
       groupName: 'Docusaurus',
