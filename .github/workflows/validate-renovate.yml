@@ -34,11 +34,12 @@ jobs:
         with:
           cache: true
 
+      # TODO switch to 'npmx' (add it into devDependencies + approve builds scripst in soruce code)
       # --strict also fails when the config uses deprecated options that need a migration.
       # The validator output is repeated as an error annotation, so it is visible on the run summary.
       - name: Validate renovate.json5
         run: |
-          if ! output=$(pnpx --yes --package "renovate@${RENOVATE_VERSION}" -- renovate-config-validator --strict renovate.json5 2>&1); then
+          if ! output=$(npx --yes --package "renovate@${RENOVATE_VERSION}" -- renovate-config-validator --strict renovate.json5 2>&1); then
             echo "$output"
             echo "::error title=Invalid Renovate config::$(echo "$output" | tail -n 15 | sed ':a;N;$!ba;s/\n/%0A/g')"
             exit 1
