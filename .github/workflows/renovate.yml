@@ -30,9 +30,9 @@ jobs:
     steps:
       - name: Get token for renovate
         id: get_token
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@v3.4.0
         with:
-          private-key: ${{ secrets.RENOVAT_PRIVATE_KEY }}
+          private-key: ${{ secrets.RENOVATE_PRIVATE_KEY }}
           app-id: ${{ secrets.RENOVATE_APP_ID }}
           owner: ${{ github.repository_owner }}
           repositories: ${{ github.repository }}
