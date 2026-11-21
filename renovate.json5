@@ -1,40 +1,38 @@
 {
   $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-
-  // Best practices include pinning GitHub Actions to commit SHAs (keeping the version in a comment)
-  extends: ['config:best-practices'],
-
+  extends: [
+    'config:best-practices',
+  ],
   timezone: 'Europe/Prague',
-
-  // Keep exact versions in package.json (no ^ or ~)
   rangeStrategy: 'pin',
-
-  // Wait a few days after a release before proposing it
   minimumReleaseAge: '3 days',
-
-  // Also refresh the transitive dependencies in pnpm-lock.yaml
   lockFileMaintenance: {
     enabled: true,
-    schedule: ['before 6am on monday'],
+    schedule: [
+      'before 6am on monday',
+    ],
   },
-
-  // Dependency Dashboard issue: overview of all updates, with checkboxes for those awaiting approval
-  dependencyDashboard: true,
-
+  dependencyDashboard: {
+    enabled: true,
+  },
   packageRules: [
     {
-      // Docusaurus packages must be upgraded together
       groupName: 'Docusaurus',
-      matchPackageNames: ['@docusaurus/**'],
+      matchPackageNames: [
+        '@docusaurus/**',
+      ],
     },
     {
       groupName: 'React',
-      matchPackageNames: ['react', 'react-dom'],
+      matchPackageNames: [
+        'react',
+        'react-dom',
+      ],
     },
     {
-      // Major updates (any package, also inside the groups above) are not proposed automatically:
-      // they wait in the dashboard issue until the checkbox is ticked. Keep this rule last.
-      matchUpdateTypes: ['major'],
+      matchUpdateTypes: [
+        'major',
+      ],
       dependencyDashboardApproval: true,
     },
   ],
