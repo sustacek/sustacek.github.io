@@ -31,17 +31,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      # Node version is taken from .nvmrc
-      - name: Setup Node.js
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+      # PNPM + Node version is taken from .nvmrc
+      - uses: pnpm/setup@v6.1.1
         with:
-          node-version-file: .nvmrc
+          cache: true
 
       # --strict also fails when the config uses deprecated options that need a migration.
       # The validator output is repeated as an error annotation, so it is visible on the run summary.
       - name: Validate renovate.json5
         run: |
-          if ! output=$(npx --yes --package "renovate@${RENOVATE_VERSION}" -- renovate-config-validator --strict renovate.json5 2>&1); then
+          if ! output=$(pnpx --yes --package "renovate@${RENOVATE_VERSION}" -- renovate-config-validator --strict renovate.json5 2>&1); then
             echo "$output"
             echo "::error title=Invalid Renovate config::$(echo "$output" | tail -n 15 | sed ':a;N;$!ba;s/\n/%0A/g')"
             exit 1
