@@ -2,6 +2,11 @@
 title: Temperature measurement inside OKC boiler -- Shelly pill
 authors: [js]
 tags: [shelly, victron, boiler]
+gallery:
+  - src: /img/posts/2026-11-25-boiler-temperature/temps%20-%20cerbogx.png
+    alt: Temperature readings on the Cerbo GX display
+  - src: /img/posts/2026-11-25-boiler-temperature/temps%20-%20vrm.png
+    alt: Temperature readings in Victron Remote Management
 ---
 
 For a long time, I wanted to get have a way to know how hot the water is in our boiler house boiler. To have a rough idea how much energy it can store till it's fully heated, and also how much hot water we have left for the house. Not just analog thermomenter, but get that data out, into our Victron system, HomeAssistant etc. So I started to dig on option how to measure it.
