@@ -1,5 +1,5 @@
 ---
-title: Temperature measurement inside an OKC boiler -- Shelly Pill
+title: Temperature inside boiler - Shelly Pill
 authors: [js]
 tags: [shelly, victron, boiler]
 gallery:
