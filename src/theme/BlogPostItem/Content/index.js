@@ -4,7 +4,7 @@ import {useBlogPost} from '@docusaurus/plugin-content-blog/client';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
-function GalleryImage({src, alt, onOpen}) {
+function GalleryImage({src, alt, onOpen, index}) {
   const imageUrl = useBaseUrl(src);
 
   return (
@@ -12,7 +12,7 @@ function GalleryImage({src, alt, onOpen}) {
       <button
         className={styles.imageButton}
         type="button"
-        onClick={() => onOpen({src, alt, imageUrl})}
+        onClick={() => onOpen(index)}
         aria-label={`Show larger image${alt ? `: ${alt}` : ''}`}>
         <img className={styles.image} src={imageUrl} alt={alt ?? ''} loading="lazy" />
       </button>
@@ -21,12 +21,29 @@ function GalleryImage({src, alt, onOpen}) {
   );
 }
 
+function LightboxImage({src, alt}) {
+  const imageUrl = useBaseUrl(src);
+
+  return (
+    <img
+      className={styles.lightboxImage}
+      src={imageUrl}
+      alt={alt ?? ''}
+    />
+  );
+}
+
 function Gallery({images}) {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   if (!Array.isArray(images) || images.length === 0) {
     return null;
   }
+
+  const selectedImage = selectedIndex === null ? null : images[selectedIndex];
+  const showPrevious = () =>
+    setSelectedIndex((current) => (current - 1 + images.length) % images.length);
+  const showNext = () => setSelectedIndex((current) => (current + 1) % images.length);
 
   return (
     <>
@@ -36,7 +53,8 @@ function Gallery({images}) {
             key={`${src}-${index}`}
             src={src}
             alt={alt}
-            onOpen={setSelectedImage}
+            index={index}
+            onOpen={setSelectedIndex}
           />
         ))}
       </section>
@@ -48,31 +66,51 @@ function Gallery({images}) {
           aria-label={selectedImage.alt || 'Enlarged image'}
           onClick={(event) => {
             if (event.target === event.currentTarget) {
-              setSelectedImage(null);
+              setSelectedIndex(null);
             }
           }}
           onKeyDown={(event) => {
             if (event.key === 'Escape') {
-              setSelectedImage(null);
+              setSelectedIndex(null);
+            } else if (event.key === 'ArrowLeft') {
+              event.preventDefault();
+              showPrevious();
+            } else if (event.key === 'ArrowRight') {
+              event.preventDefault();
+              showNext();
             }
           }}>
           <button
             className={styles.closeButton}
             type="button"
-            onClick={() => setSelectedImage(null)}
+            onClick={() => setSelectedIndex(null)}
             aria-label="Close enlarged image">
             ×
           </button>
+          {images.length > 1 && (
+            <button
+              className={`${styles.navigationButton} ${styles.previousButton}`}
+              type="button"
+              onClick={showPrevious}
+              aria-label="Show previous image">
+              ‹
+            </button>
+          )}
           <figure className={styles.lightboxFigure}>
-            <img
-              className={styles.lightboxImage}
-              src={selectedImage.imageUrl}
-              alt={selectedImage.alt ?? ''}
-            />
+            <LightboxImage src={selectedImage.src} alt={selectedImage.alt} />
             {selectedImage.alt && (
               <figcaption className={styles.lightboxCaption}>{selectedImage.alt}</figcaption>
             )}
           </figure>
+          {images.length > 1 && (
+            <button
+              className={`${styles.navigationButton} ${styles.nextButton}`}
+              type="button"
+              onClick={showNext}
+              aria-label="Show next image">
+              ›
+            </button>
+          )}
         </div>
       )}
     </>
