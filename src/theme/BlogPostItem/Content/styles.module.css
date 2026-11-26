@@ -9,6 +9,22 @@
   margin: 0;
 }
 
+.imageButton {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: var(--ifm-global-radius);
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.imageButton:focus-visible,
+.closeButton:focus-visible {
+  outline: 3px solid var(--ifm-color-primary);
+  outline-offset: 3px;
+}
+
 .image {
   display: block;
   width: 100%;
@@ -20,4 +36,50 @@
   margin-top: 0.5rem;
   color: var(--ifm-color-emphasis-700);
   font-size: 0.9rem;
+}
+
+.lightbox {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem 1rem;
+  background: rgb(0 0 0 / 85%);
+}
+
+.lightboxFigure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+}
+
+.lightboxImage {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 7rem);
+  object-fit: contain;
+}
+
+.lightboxCaption {
+  margin-top: 0.75rem;
+  color: white;
+  text-align: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  padding: 0.25rem 0.75rem;
+  border: 0;
+  color: white;
+  background: transparent;
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
 }
