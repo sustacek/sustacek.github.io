@@ -20,7 +20,8 @@
 }
 
 .imageButton:focus-visible,
-.closeButton:focus-visible {
+.closeButton:focus-visible,
+.navigationButton:focus-visible {
   outline: 3px solid var(--ifm-color-primary);
   outline-offset: 3px;
 }
@@ -45,7 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem 1rem 1rem;
+  padding: 3rem 4rem 1rem;
   background: rgb(0 0 0 / 85%);
 }
 
@@ -82,4 +83,51 @@
   font-size: 2.5rem;
   line-height: 1;
   cursor: pointer;
+}
+
+.navigationButton {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 50%;
+  color: white;
+  background: rgb(0 0 0 / 45%);
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.previousButton {
+  left: 0.75rem;
+}
+
+.nextButton {
+  right: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .lightbox {
+    padding-inline: 3.25rem;
+  }
+
+  .navigationButton {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .previousButton {
+    left: 0.25rem;
+  }
+
+  .nextButton {
+    right: 0.25rem;
+  }
 }
