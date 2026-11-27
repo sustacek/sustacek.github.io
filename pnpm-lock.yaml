@@ -240,7 +240,7 @@ importers:
         specifier: 19.3.1
         version: 19.3.1(react@19.3.1)
       yet-another-react-lightbox:
-        specifier: ^3.33.1
+        specifier: 3.33.1
         version: 3.33.1(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
     devDependencies:
       node:
